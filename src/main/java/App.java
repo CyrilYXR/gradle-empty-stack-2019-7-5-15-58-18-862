@@ -7,6 +7,37 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+//        System.out.println(new App().getGreeting());
+
+        System.out.println("=============Story 1============");
+        Mobile mobile = new Mobile();
+        IPhone iPhone = new IPhone();
+        Andriod andriod = new Andriod();
+
+        mobile.call("input message from mobile");
+        iPhone.call("input message from iphone");
+        andriod.call("input message from andriod");
+
+        System.out.println("=============Story 2============");
+        Mobile specMobile = new Mobile("爱疯","red","iphone");
+        System.out.println(specMobile.toString());
+
+        System.out.println("=============Story 3============");
+        Person xiaoMing = new Person("XiaoMing", new IPhone());
+        xiaoMing.call("1111111111111111111111");
+
+        Person liSi = new Person("LiSi", new Andriod());
+        liSi.call("1111111111");
+
+        IPhoneRobot iPhoneRobot = new IPhoneRobot("robot", new IPhone());
+        iPhoneRobot.call("I'm a iphone robot.");
+
+        System.out.println("=============Story 4============");
+        Person personOfStory4 = new Person("person4", new IPhone());
+//        personOfStory4.changeMobile(new IPhone());
+        personOfStory4.call("message from iphone");
+
+        personOfStory4.changeMobile(new Andriod());
+        personOfStory4.call("message from andriod");
     }
 }
